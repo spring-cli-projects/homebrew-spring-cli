@@ -1,21 +1,21 @@
-# Generated with JReleaser 1.9.0-SNAPSHOT at 2023-10-24T14:30:09.169496682Z
+# Generated with JReleaser 1.9.0-SNAPSHOT at 2023-10-27T18:22:31.540741566Z
 class SpringCli < Formula
   desc "Spring Cli"
   homepage "https://github.com/spring-projects-experimental/spring-cli"
-  version "0.7.1"
+  version "0.7.2"
   license "Apache-2.0"
 
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/spring-projects-experimental/spring-cli/releases/download/v0.7.1/spring-cli-standalone-0.7.1-linux.x86_64.zip"
-    sha256 "79abe069a7c19c01729a27c4f746805417da8b369b5cf9367e2113a431073d2e"
+    url "https://github.com/spring-projects-experimental/spring-cli/releases/download/v0.7.2/spring-cli-standalone-0.7.2-linux.x86_64.zip"
+    sha256 "fee5e202ddbb7d560a2e09a0a3bbab9ac1a8f19b36d4dbda46b3f944993d7ced"
   end
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/spring-projects-experimental/spring-cli/releases/download/v0.7.1/spring-cli-standalone-0.7.1-osx.x86_64.zip"
-    sha256 "3cf19a229f4ac0004ebc8c9106149d94612cdbfceca1d46ac16705c352dc11e5"
+    url "https://github.com/spring-projects-experimental/spring-cli/releases/download/v0.7.2/spring-cli-standalone-0.7.2-osx.x86_64.zip"
+    sha256 "c27090ebe1febd992fff6ee379f7ef9ac8d137797857c02105b12bcef72162b2"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/spring-projects-experimental/spring-cli/releases/download/v0.7.1/spring-cli-standalone-0.7.1-osx.x86_64.zip"
-    sha256 "3cf19a229f4ac0004ebc8c9106149d94612cdbfceca1d46ac16705c352dc11e5"
+    url "https://github.com/spring-projects-experimental/spring-cli/releases/download/v0.7.2/spring-cli-standalone-0.7.2-osx.x86_64.zip"
+    sha256 "c27090ebe1febd992fff6ee379f7ef9ac8d137797857c02105b12bcef72162b2"
   end
 
 
@@ -37,6 +37,6 @@ class SpringCli < Formula
 
   test do
     output = shell_output("#{bin}/spring --version")
-    assert_match "0.7.1", output
+    assert_match "0.7.2", output
   end
 end
