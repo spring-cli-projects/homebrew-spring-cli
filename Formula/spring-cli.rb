@@ -1,21 +1,21 @@
-# Generated with JReleaser 1.9.0-SNAPSHOT at 2023-10-27T18:22:31.540741566Z
+# Generated with JReleaser 1.9.0-SNAPSHOT at 2023-11-01T09:27:34.658370262Z
 class SpringCli < Formula
   desc "Spring Cli"
   homepage "https://github.com/spring-projects-experimental/spring-cli"
-  version "0.7.2"
+  version "0.7.3"
   license "Apache-2.0"
 
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/spring-projects-experimental/spring-cli/releases/download/v0.7.2/spring-cli-standalone-0.7.2-linux.x86_64.zip"
-    sha256 "fee5e202ddbb7d560a2e09a0a3bbab9ac1a8f19b36d4dbda46b3f944993d7ced"
-  end
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/spring-projects-experimental/spring-cli/releases/download/v0.7.2/spring-cli-standalone-0.7.2-osx.x86_64.zip"
-    sha256 "c27090ebe1febd992fff6ee379f7ef9ac8d137797857c02105b12bcef72162b2"
+    url "https://github.com/spring-projects-experimental/spring-cli/releases/download/v0.7.3/spring-cli-standalone-0.7.3-linux.x86_64.zip"
+    sha256 "8b4a5e0f2dd198a5422893537cd4b0b83ea73f6203b741212f43d89b8900f4ed"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/spring-projects-experimental/spring-cli/releases/download/v0.7.2/spring-cli-standalone-0.7.2-osx.x86_64.zip"
-    sha256 "c27090ebe1febd992fff6ee379f7ef9ac8d137797857c02105b12bcef72162b2"
+    url "https://github.com/spring-projects-experimental/spring-cli/releases/download/v0.7.3/spring-cli-standalone-0.7.3-osx.aarch64.zip"
+    sha256 "f1a4a00454fbde5607a985cee48c5ce54035cd59dc2317aa26964f983766612c"
+  end
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/spring-projects-experimental/spring-cli/releases/download/v0.7.3/spring-cli-standalone-0.7.3-osx.x86_64.zip"
+    sha256 "a74124dd2161b5104e30674454176a122d202183000aaf72ab727cfd6f647cdf"
   end
 
 
@@ -29,7 +29,7 @@ class SpringCli < Formula
       Dir["#{libexec}/lib/**/*.dylib"].each do |dylib|
         chmod 0664, dylib
         MachO::Tools.change_dylib_id(dylib, "@rpath/#{File.basename(dylib)}")
-        MachO.codesign!(dylib) if Hardware::CPU.arm?
+        MachO.codesign!(dylib)
         chmod 0444, dylib
       end
     end
@@ -37,6 +37,6 @@ class SpringCli < Formula
 
   test do
     output = shell_output("#{bin}/spring --version")
-    assert_match "0.7.2", output
+    assert_match "0.7.3", output
   end
 end
