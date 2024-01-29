@@ -1,21 +1,21 @@
-# Generated with JReleaser 1.11.0-SNAPSHOT at 2024-01-15T11:24:54.889368807Z
+# Generated with JReleaser 1.11.0-SNAPSHOT at 2024-01-29T14:49:45.197284112Z
 class SpringCli < Formula
-  desc "Spring Cli"
-  homepage "https://github.com/spring-projects-experimental/spring-cli"
-  version "0.8.0"
+  desc "Spring CLI improves your productivity when creating new Spring projects or adding functionality to existing projects"
+  homepage "https://spring.io/projects/spring-cli"
+  version "0.8.1"
   license "Apache-2.0"
 
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/spring-projects/spring-cli/releases/download/v0.8.0/spring-cli-standalone-0.8.0-linux.x86_64.zip"
-    sha256 "79188dc37ec7bc661cb3731cadbe10cea800f2d96acb98e1a649bcffb935395c"
+    url "https://github.com/spring-projects/spring-cli/releases/download/v0.8.1/spring-cli-standalone-0.8.1-linux.x86_64.zip"
+    sha256 "ee0831fbcc9a21b7ff906278d55755c92118d626c59dfb2b3e2977c48cb297c5"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/spring-projects/spring-cli/releases/download/v0.8.0/spring-cli-standalone-0.8.0-osx.aarch64.zip"
-    sha256 "7f8ed20f99eaefe2c51dcec8678119263313960320b9c206c099a788b5c1a5af"
+    url "https://github.com/spring-projects/spring-cli/releases/download/v0.8.1/spring-cli-standalone-0.8.1-osx.aarch64.zip"
+    sha256 "3109768e3bb76af474917d00da894de743cfa64a5c35c496452a32a20a9ef4c9"
   end
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/spring-projects/spring-cli/releases/download/v0.8.0/spring-cli-standalone-0.8.0-osx.x86_64.zip"
-    sha256 "5a37769f933720fb2bd3c87f5654e70dd3c09d884fd3b143e4f2f08a0538d66c"
+    url "https://github.com/spring-projects/spring-cli/releases/download/v0.8.1/spring-cli-standalone-0.8.1-osx.x86_64.zip"
+    sha256 "f8d0d5fdf8946ef38c768f1d02eac2816ef984350fe202244ccf0d95d609f6da"
   end
 
 
@@ -39,6 +39,6 @@ class SpringCli < Formula
 
   test do
     output = shell_output("#{bin}/spring --version")
-    assert_match "0.8.0", output
+    assert_match "0.8.1", output
   end
 end
